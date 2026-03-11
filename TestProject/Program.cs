@@ -1,25 +1,30 @@
 ﻿/*
-   This code reverses a message, counts the number of times 
-   a particular character appears, then prints the results
-   to the console window.
- */
+Console.WriteLine("a" == "a");
+Console.WriteLine("a" == "A");
+Console.WriteLine(1 == 2);
 
-string originalMessage = "The quick brown fox jumps over the lazy dog.";
+string myValue = "a";
+Console.WriteLine(myValue == "a");
 
-char[] message = originalMessage.ToCharArray();
-Array.Reverse(message);
+string value1 = " a";
+string value2 = "A ";
+Console.WriteLine(value1.Trim().ToLower() == value2.Trim().ToLower());
 
-int letterCount = 0;
 
-foreach (char letter in message)
-{
-    if (letter == 'o')
-    {
-        letterCount++;
-    }
-}
+Console.WriteLine("a" != "a");
+Console.WriteLine("a" != "A");
+Console.WriteLine(1 != 2);
 
-string newMessage = new String(message);
+string myValue = "a";
+Console.WriteLine(myValue != "a");
 
-Console.WriteLine(newMessage);
-Console.WriteLine($"'o' appears {letterCount} times.");
+
+Console.WriteLine(1 > 2);
+Console.WriteLine(1 < 2);
+Console.WriteLine(1 >= 1);
+Console.WriteLine(1 <= 1);
+*/
+
+string pangram = "The quick brown fox jumps over the lay dog.";
+Console.WriteLine(pangram.Contains("fox"));
+Console.WriteLine(pangram.Contains("cow"));
