@@ -34,14 +34,16 @@ foreach (string name in studentNames)
     int sumAssignmentScores = 0;
 
     decimal currentStudentGrade = 0;
-    
+
     int gradedAssignments = 0;
-    
-    if (gradedAssignments <= examAssignments)
-        sumAssignmentScores += emmaScores / 10;
+
     foreach (int score in studentScores)
     {
-        sumAssignmentScores += score;
+        gradedAssignments += 1;
+        if (gradedAssignments <= examAssignments)
+            sumAssignmentScores += score;
+        else
+            sumAssignmentScores += score / 10;
     }
 
     currentStudentGrade = (decimal)sumAssignmentScores / examAssignments;
