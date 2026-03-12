@@ -1,94 +1,12 @@
-﻿string sku = "01-MN-L";
-string[] product = sku.Split('-');
-
-string type = "";
-string color = "";
-string size = "";
-
+﻿string[] names = { "Alex", "Eddie", "David", "Michael"};
 /*
-if (product[0] == "01")
+for (int i = names.Length - 1; i >= 0; i--)
 {
-    type = "Sweat shirt";
-}else if (product[0] == "02")
-{
-    type = "T-shirt";
-}else if (product[0] == "03")
-{
-    type = "Sweat pants";
-}else
-{
-    type = "Other";
-}
-
-if (product[1] == "BL")
-{
-    color = "Black";
-}else if (product[1] == "MN")
-{
-    color = "Maroon";
-}else
-{
-    color = "White";
-}
-
-if (product[2] == "S")
-{
-    size = "Small";
-}else if (product[2] == "M")
-{
-    size = "Medium";
-}else if (product[2] == "L")
-{
-    size = "Large";
-}else
-{
-    size = "One Size Fits All";
+    Console.WriteLine(names[i]);
 }
 */
-
-switch (product[0])
+for (int i = 0; i < names.Length; i++)
 {
-    case "01":
-        type = "Sweat shirt";
-        break;
-    case "02":
-        type = "T-shirt";
-        break;
-    case "03":
-        type = "Sweat pants";
-        break;
-    default:
-        type = "Other";
-        break;
+    if (names[i] == "David") names[i] = "Sammy";
 }
-
-switch (product[1])
-{
-    case "BL":
-        color = "Black";
-        break;
-    case "MN":
-        color = "Manoon";
-        break;
-    default:
-        type = "White";
-        break;
-}
-
-switch (product[2])
-{
-    case "S":
-        size = "Small";
-        break;
-    case "M":
-        size = "Medium";
-        break;
-    case "L":
-        size = "Large";
-        break;
-    default:
-        size = "One Size Fit All";
-        break;
-}
-
-Console.WriteLine($"Product: {size} {color} {type}");
+foreach (var name in names) Console.WriteLine(name);
