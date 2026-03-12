@@ -1,18 +1,21 @@
-﻿string permission = "Admin|Manager";
-int level = 50;
-if (permission.Contains("Admin") && level > 55)
+﻿int employeeLevel = 100;
+string employeeName = "John Smith";
+string title = "";
+switch (employeeLevel)
 {
-    Console.WriteLine("Wellcome, Super Admin user.");
+    case 100:
+    case 200:
+        title = "Senior A";
+        break;
+    case 300:
+        title = "Manager";
+        break;
+    case 400:
+        title = "Senior Manager";
+        break;
+    default:
+        title = "Associate";
+        break;
 }
-else if (permission.Contains("Admin") && level <= 55)
-{
-    Console.WriteLine("Welcome, Admin user");
-}
-else if (permission.Contains("Manager") && level >= 20)
-{
-    Console.WriteLine("Contact an Admin for access.");
-}
-else
-{
-    Console.WriteLine("You do not have sufficient privileges.");
-}
+
+Console.WriteLine($"{employeeName}, {title}");
