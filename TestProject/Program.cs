@@ -1,25 +1,26 @@
-﻿string? role;
-bool validRole = false;
-
-Console.WriteLine("Enter your role name (Administrator, Manager, or User)");
-
-do
+﻿string[] myStrings = new string[2]
 {
-    role = Console.ReadLine();
+    "I like pizza. I like roast chicken. I like salad.",
+    "I like all three of the meny choices."
+};
 
-    if (role != null)
+int periodLocation;
+
+foreach (string myString in myStrings)
+{
+    string tempString = myString;
+    periodLocation = tempString.IndexOf(".");
+
+    while (periodLocation != -1)
     {
-        role = role.Trim().ToLower();
-
-        if (role == "administrator" || role == "manager" || role == "user")
-        {
-            validRole = true;
-        }
-        else
-        {
-            Console.WriteLine($"The role name that you entered, \"{role} \"is not valid. Enter your role (Administrator, Manager, User)"); 
-        }
+        string  sentence = tempString.Substring(0, periodLocation);
+        Console.WriteLine(sentence.TrimStart());
+        tempString = tempString.Remove(0, periodLocation + 1);
+        periodLocation = tempString.IndexOf(".");
     }
-}while (!validRole);
 
-Console.WriteLine($"Your input value ({role}) has been accpeted.");
+    if (tempString.Length > 0)
+    {
+        Console.WriteLine(tempString.TrimStart());
+    }
+}
