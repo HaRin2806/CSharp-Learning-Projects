@@ -1,20 +1,50 @@
-﻿Random random = new Random();
-int current = random.Next(1, 11);
+﻿int heroHealth = 10;
+int monsterHealth = 10;
+
+Random random = new Random();
+while (heroHealth > 0 && monsterHealth > 0)
+{
+    int heroAttack = random.Next(1, 11);
+    monsterHealth -= heroAttack;
+
+    Console.WriteLine($"Monster was damanged and lost {heroAttack} health and now has {monsterHealth} health.");
+    if (monsterHealth <= 0)
+    {
+        Console.WriteLine("Hero wins!");
+        break;
+    }
+
+    int monsterAttack = random.Next(1, 11);
+    heroHealth -= monsterAttack;
+
+    Console.WriteLine($"Hero wa damaged and lost {monsterAttack} health and now has {heroHealth} health.");
+
+    if (heroHealth <= 0)
+    {
+        Console.WriteLine("Monster wins!");
+    }
+}
+
+/*
+//C2
+int hero = 10;
+int monster = 10;
+
+Random dice = new Random();
 
 do
 {
-    current = random.Next(1, 11);
-    if (current >= 8) continue;
-    
-    Console.WriteLine(current);
+    int roll = dice.Next(1, 11);
+    monster -= roll;
+    Console.WriteLine($"Monster was damaged and lost {roll} health and now has {monster} health.");
 
-}while (current !=7);
+    if (monster <= 0) continue;
 
-/*
-while (current >= 3)
-{
-    Console.WriteLine(current);
-    current = random.Next(1, 11);
-}
-Console.WriteLine($"Last number: {current}");
+    roll = dice.Next(1, 11);
+    hero -= roll;
+    Console.WriteLine($"Hero was damaged and lost {roll} health and now has {hero} health.");
+
+} while (hero > 0 && monster > 0);
+
+Console.WriteLine(hero > monster ? "Hero wins!" : "Monster wins!");
 */
