@@ -1,42 +1,85 @@
-﻿/*
-Console.WriteLine("Signed integral types: ");
+﻿// int first = 2;
+// string second = "4";
+// string result = first + second;
+// Console.WriteLine(result);
 
-Console.WriteLine($"sbyte : {sbyte.MinValue} to {sbyte.MaxValue}");
-Console.WriteLine($"sbyte : {short.MinValue} to {short.MaxValue}");
-Console.WriteLine($"sbyte : {int.MinValue} to {int.MaxValue}");
-Console.WriteLine($"sbyte : {long.MinValue} to {long.MaxValue}");
+// int myInt = 3;
+// Console.WriteLine($"int: {myInt}");
+// decimal myDecimal = myInt;
+// Console.WriteLine($"decimal: {myDecimal}");
 
-Console.WriteLine("");
-Console.WriteLine("Unsigned integral types:");
+// decimal myDecimal = 3.14m;
+// Console.WriteLine($"decimal: {myDecimal}");
+// int myInt = (int)myDecimal;
+// Console.WriteLine($"int: {myInt}");
 
-Console.WriteLine($"byte   : {byte.MinValue} to {byte.MaxValue}");
-Console.WriteLine($"ushort : {ushort.MinValue} to {ushort.MaxValue}");
-Console.WriteLine($"uint   : {uint.MinValue} to {uint.MaxValue}");
-Console.WriteLine($"ulong  : {ulong.MinValue} to {ulong.MaxValue}");
+// decimal myDecimal = 1.23456789m;
+// float myFloat = (float)myDecimal;
 
-Console.WriteLine("");
-Console.WriteLine("Floating point types:");
-Console.WriteLine($"float  : {float.MinValue} to {float.MaxValue} (with ~6-9 digits of precision)");
-Console.WriteLine($"double : {double.MinValue} to {double.MaxValue} (with ~15-17 digits of precision)");
-Console.WriteLine($"decimal: {decimal.MinValue} to {decimal.MaxValue} (with 28-29 digits of precision)");
-*/
+// Console.WriteLine($"Decimal: {myDecimal}");
+// Console.WriteLine($"Float: {myFloat}");
 
-//int[] data;
-//data = new int[3];
-// ==========
-//int [] data = new int[3];
+// int first = 5;
+// int second = 7;
+// string message = first.ToString() + second.ToString();
+// Console.WriteLine(message);
 
-int valA = 2;
-int valB = valA;
-valB = 5;
-Console.WriteLine($"ValA: {valA}");
-Console.WriteLine($"ValB: {valB}");
+// string first = "5";
+// string second = "7";
+// int sum = int.Parse(first) + int.Parse(second);
+// Console.WriteLine(sum);
 
-int[] ref_A= new int[1];
-ref_A[0] = 2;
-int[] ref_B = ref_A;
-ref_B[0] = 5;
+// string val1 = "5";
+// string val2 = "7";
+// int result = Convert.ToInt32(val1) * Convert.ToInt32(val2);
+// Console.WriteLine(result);
 
-Console.WriteLine("--Reference Types--");
-Console.WriteLine($"ref_A[0]: {ref_A[0]}");
-Console.WriteLine($"ref_B[0]: {ref_B[0]}");
+// int val = (int)1.5m; //casting truncates
+// Console.WriteLine(val);
+// int val2 = Convert.ToInt32(1.5m); //converting rounds up
+// Console.WriteLine(val2);
+
+// string val = "bad";
+// int result = 0;
+// if (int.TryParse(val, out result))
+// {
+//     Console.WriteLine($"Measurement: {result}");
+// }
+// else
+// {
+//     Console.WriteLine("Unable to report the measurement.");
+// }
+// if (result > 0)
+// {
+//     Console.WriteLine($"Measurement (w/ offset): {50 + result}");
+// }
+
+// string[] vals = {"12.3", "45", "ABC", "11", "DEF"};
+// double total = 0;
+// string mess = "";
+// foreach (string val in vals)
+// {
+//     double number;
+//     if (double.TryParse(val, out number))
+//     {
+//         total += number;
+//     }
+//     else
+//     {
+//         mess += val;
+//     }
+// }
+// Console.WriteLine($"Message: {mess}");
+// Console.WriteLine($"Total: {total}");
+
+int val1 = 11;
+decimal val2 = 6.2m;
+float val3 = 4.3f;
+int result1 = Convert.ToInt32(val1 / val2);
+Console.WriteLine($"Divide val1 by val2, display as an int: {result1}");
+
+decimal result2 = val2 / (decimal)val3;
+Console.WriteLine($"Divide val2 by val3, display as a decimaal: {result2}");
+
+float result3 = val3 / val1;
+Console.WriteLine($"Divide val3 by val1, display as a float: {result3}");
