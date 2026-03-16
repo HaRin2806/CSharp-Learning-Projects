@@ -1,64 +1,42 @@
-﻿string[] myStrings = new string[2]
-{
-    "I like pizza. I like roast chicken. I like salad.",
-    "I like all three of the meny choices."
-};
+﻿/*
+Console.WriteLine("Signed integral types: ");
 
-int periodLocation;
+Console.WriteLine($"sbyte : {sbyte.MinValue} to {sbyte.MaxValue}");
+Console.WriteLine($"sbyte : {short.MinValue} to {short.MaxValue}");
+Console.WriteLine($"sbyte : {int.MinValue} to {int.MaxValue}");
+Console.WriteLine($"sbyte : {long.MinValue} to {long.MaxValue}");
 
-foreach (string myString in myStrings)
-{
-    string tempString = myString;
-    periodLocation = tempString.IndexOf(".");
+Console.WriteLine("");
+Console.WriteLine("Unsigned integral types:");
 
-    while (periodLocation != -1)
-    {
-        string  sentence = tempString.Substring(0, periodLocation);
-        Console.WriteLine(sentence.TrimStart());
-        tempString = tempString.Remove(0, periodLocation + 1);
-        periodLocation = tempString.IndexOf(".");
-    }
+Console.WriteLine($"byte   : {byte.MinValue} to {byte.MaxValue}");
+Console.WriteLine($"ushort : {ushort.MinValue} to {ushort.MaxValue}");
+Console.WriteLine($"uint   : {uint.MinValue} to {uint.MaxValue}");
+Console.WriteLine($"ulong  : {ulong.MinValue} to {ulong.MaxValue}");
 
-    if (tempString.Length > 0)
-    {
-        Console.WriteLine(tempString.TrimStart());
-    }
-}
-/*
-//C2
-string[] myStrings = new string[2] { "I like pizza. I like roast chicken. I like salad", "I like all three of the menu choices" };
-int stringsCount = myStrings.Length;
-
-string myString = "";
-int periodLocation = 0;
-
-for (int i = 0; i < stringsCount; i++)
-{
-    myString = myStrings[i];
-    periodLocation = myString.IndexOf(".");
-
-    string mySentence;
-
-    // extract sentences from each string and display them one at a time
-    while (periodLocation != -1)
-    {
-
-        // first sentence is the string value to the left of the period location
-        mySentence = myString.Remove(periodLocation);
-
-        // the remainder of myString is the string value to the right of the location
-        myString = myString.Substring(periodLocation + 1);
-
-        // remove any leading white-space from myString
-        myString = myString.TrimStart();
-
-        // update the comma location and increment the counter
-        periodLocation = myString.IndexOf(".");
-
-        Console.WriteLine(mySentence);
-    }
- 
-    mySentence = myString.Trim();
-    Console.WriteLine(mySentence);
-}
+Console.WriteLine("");
+Console.WriteLine("Floating point types:");
+Console.WriteLine($"float  : {float.MinValue} to {float.MaxValue} (with ~6-9 digits of precision)");
+Console.WriteLine($"double : {double.MinValue} to {double.MaxValue} (with ~15-17 digits of precision)");
+Console.WriteLine($"decimal: {decimal.MinValue} to {decimal.MaxValue} (with 28-29 digits of precision)");
 */
+
+//int[] data;
+//data = new int[3];
+// ==========
+//int [] data = new int[3];
+
+int valA = 2;
+int valB = valA;
+valB = 5;
+Console.WriteLine($"ValA: {valA}");
+Console.WriteLine($"ValB: {valB}");
+
+int[] ref_A= new int[1];
+ref_A[0] = 2;
+int[] ref_B = ref_A;
+ref_B[0] = 5;
+
+Console.WriteLine("--Reference Types--");
+Console.WriteLine($"ref_A[0]: {ref_A[0]}");
+Console.WriteLine($"ref_B[0]: {ref_B[0]}");
