@@ -307,6 +307,7 @@ do
                 }
 
                 ourAnimals[i, 2] = "Age: " + age;
+                
                 string description = ourAnimals[i, 4].Substring(22);
 
                 while (string.IsNullOrWhiteSpace(description))
