@@ -1,5 +1,9 @@
 using System;
+using System.Collections.Specialized;
+using System.Diagnostics;
 using System.IO;
+using System.IO.Pipelines;
+using System.Text;
 
 // the ourAnimals array will store the following: 
 string animalSpecies = "";
@@ -307,7 +311,7 @@ do
                 }
 
                 ourAnimals[i, 2] = "Age: " + age;
-                
+
                 string description = ourAnimals[i, 4].Substring(22);
 
                 while (string.IsNullOrWhiteSpace(description))
@@ -329,7 +333,41 @@ do
 
         case "4":
             // Ensure animal nicknames and personality descriptions are complete
-            Console.WriteLine("Challenge Project - please check back soon to see progress.");
+            for (int i = 0; i < maxPets; i++)
+            {
+                if (ourAnimals[i, 0] == "ID #: ")
+                {
+                    continue;
+                }
+                string nickname = ourAnimals[i, 3].Substring(10);
+
+                while (string.IsNullOrWhiteSpace(nickname))
+                {
+                    Console.WriteLine($"Enter a nickname for {ourAnimals[i, 0]}");
+                    readResult = Console.ReadLine();
+                    if (readResult != null)
+                    {
+                        nickname = readResult;
+                    }
+                }
+
+                ourAnimals[i, 3] = "Nickname: " + nickname;
+                string personality = ourAnimals[i, 5].Substring(13);
+
+                while (string.IsNullOrWhiteSpace(personality))
+                {
+                    Console.WriteLine($"Enter a personality description for {ourAnimals[i, 0]}");
+                    readResult = Console.ReadLine();
+
+                    if ( (readResult != null))
+                    {
+                        personality = readResult;
+                    }
+
+                    ourAnimals[i, 5] = "Personality: " + personality;
+                }
+            }
+            Console.WriteLine("Nickname and personality description fields are complete for all of our friends.");
             Console.WriteLine("Press the Enter key to continue.");
             readResult = Console.ReadLine();
             break;
