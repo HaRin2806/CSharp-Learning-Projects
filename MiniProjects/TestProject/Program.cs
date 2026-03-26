@@ -46,7 +46,8 @@ foreach (var pallet in pallets)
 {
     Console.WriteLine($"-- {pallet}");
 }
-*/
+
+
 string value = "abc123";
 char[] valueArray = value.ToCharArray();
 Array.Reverse(valueArray);
@@ -59,3 +60,22 @@ foreach (string item in items)
 {
     Console.WriteLine(item);
 }
+*/
+string pangram = "The quick brown fox jumps over the lazy dog";
+//chia nho
+string[] mess = pangram.Split(' ');
+
+string[] newMess = new string[mess.Length];
+
+for (int i = 0; i < mess.Length; i++)
+{
+    char[] letters = mess[i].ToCharArray();
+    Array.Reverse(letters);
+    newMess[i] = new string(letters);
+}
+
+string result = String.Join(" ", newMess);
+Console.WriteLine(result);
+
+
+
